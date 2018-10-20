@@ -1,0 +1,20 @@
+/* avaModal classes BEM*/
+.ava-modal {
+  background: rgba(19, 19, 9, 0.733);
+}
+/* YouTube Box */
+.ava-yt-box {
+  background: #fcf2dc;
+  padding: 7em;
+}
+.ava-yt-box__header {
+  color: white;
+  background: rgb(182, 166, 132);
+}
+.ava-yt-box__x-btn {
+  background: rgb(218, 28, 75);
+  border: 0;
+}
+.ava-yt-box__x-btn:hover {
+  background: rgb(150, 15, 49);
+}
