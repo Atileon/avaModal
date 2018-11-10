@@ -1,0 +1,29 @@
+{
+  "name": "modalati",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Atileon/avaModal.git"
+  },
+  "author": "Steve N. Peralta R.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Atileon/avaModal/issues"
+  },
+  "homepage": "https://github.com/Atileon/avaModal#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.5",
+    "@babel/preset-env": "^7.1.5",
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^8.0.4",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2"
+  }
+}

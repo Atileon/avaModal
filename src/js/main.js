@@ -19,9 +19,12 @@ class AtiModal {
         )
       : console.log("Modal is ready to launch!");
     //   Send elements to listeners
-    for (let el of this.elements) {
-      this.modal(el);
+    for (let i = 0; i < this.elements.length; i++) {
+      this.modal(this.elements[i]);
     }
+    // for (let el of this.elements) {
+    //   this.modal(el);
+    // }
   }
   modal(element) {
     element.addEventListener("click", e => {
@@ -39,18 +42,23 @@ class AtiModal {
     let isPercent = this.config.percent ? "%" : "px";
     // this.container.style.width = "100%";
     // this.container.style.height = "100vh";
-    this.container.style =
-      "width:100%; height:100vh; position:fixed; top:0;left:0;";
+    this.container.setAttribute(
+      "style",
+      "width:100%; height:100vh; position:fixed; top:0;left:0;"
+    );
     let modalContainer = document.createElement("div");
     modalContainer.id = "ava-modal";
     modalContainer.className = "ava-modal";
-    modalContainer.style = "position:relative; width:100%;height:100%;";
+    modalContainer.setAttribute(
+      "style",
+      "position:relative; width:100%;height:100%;"
+    );
 
     // YouTube Box
     let ytBox = document.createElement("div");
     ytBox.id = "yt-box";
     ytBox.className = "ava-yt-box";
-    ytBox.style = "margin:0 auto; position: relative;";
+    ytBox.setAttribute("style", "margin:0 auto; position: relative;");
     ytBox.style.width = `${this.config.width}${isPercent}`;
     ytBox.style.height = `${this.config.height}${isPercent}`;
     ytBox.style.background = `${this.config.backgroundColor}`;
@@ -64,12 +72,18 @@ class AtiModal {
         }</span>`
       : "";
 
-    headBox.style = "width:100%; height:10%;position:absolute;left:0;top:0;";
+    headBox.setAttribute(
+      "style",
+      "width:100%; height:10%;position:absolute;left:0;top:0;"
+    );
     headBox.style.background = `${this.config.headerBg}`;
     headBox.className = "ava-yt-box__header";
     // Close button
     let closeBtn = document.createElement("button");
-    closeBtn.style = "width:10%; height: 10%;position:absolute;right:0;top:0;";
+    closeBtn.setAttribute(
+      "style",
+      "width:10%; height: 10%;position:absolute;right:0;top:0;"
+    );
     closeBtn.textContent = "X";
     closeBtn.className = "ava-yt-box__x-btn";
     //close btn toggle modal
@@ -94,7 +108,7 @@ class AtiModal {
     }
   }
   destroyModal() {
-    this.container.style = "";
+    this.container.setAttribute("style", " ");
     this.container.innerHTML = "";
   }
   launchVideo(onElement) {
@@ -103,7 +117,7 @@ class AtiModal {
     this.config.autoPlay ? (this.videoUrl = `${this.videoUrl}?autoplay=1`) : "";
 
     let ytFrame = document.createElement("iframe");
-    ytFrame.style = "margin:1em auto;width:100%;height:100%;";
+    ytFrame.setAttribute("style", "margin:1em auto;width:100%;height:100%;");
     ytFrame.src = this.videoUrl;
     ytFrame.frameBorder = "0";
     ytFrame.allowFullscreen = true;
